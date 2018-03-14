@@ -39,6 +39,18 @@
         <name>ecbbfec74f31-releases</name>
         <url>http://13.127.169.155:8090/artifactory/ext-release-local</url>
     </repository>
+	
+		<repository>
+		<id>deployment</id>
+		<name>Internal Releases</name>
+		<url>http://10.24.220.190:8081/repository/maven-releases/</url>
+	</repository>
+	
+	<snapshotRepository>
+		<id>tata</id>
+		<name>Internal Releases</name>
+		<url>http://10.24.220.190:8081/repository/maven-snapshots/</url>
+	</snapshotRepository>
 </distributionManagement>
 
 
