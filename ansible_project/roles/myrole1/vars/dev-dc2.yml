@@ -1,0 +1,6 @@
+---
+# vars file for myrole1
+nodedc:
+  - node5
+  - node6
+  - node7

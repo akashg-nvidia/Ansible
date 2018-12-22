@@ -1,0 +1,4 @@
+---
+ - include_tasks: dev.yml
+ - include_tasks: stage.yml
+ - include_tasks: prod.yml

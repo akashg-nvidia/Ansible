@@ -1,0 +1,7 @@
+---
+# vars file for myrole1
+nodedc:
+  - node-prod1.yml
+  - node2
+  - node3
+  - node4

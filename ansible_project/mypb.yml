@@ -1,0 +1,5 @@
+---
+- name: parent playbook
+  hosts: localhost
+  roles:
+    - myrole1

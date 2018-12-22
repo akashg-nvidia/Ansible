@@ -1,0 +1,11 @@
+node_name: {{item.ansible_facts.node_name }}
+nodeIP: {{item.ansible_facts.node_ip }}
+sadsa
+dsadsax
+casdsaddjhgjh
+ewcdascsa
+edcsdacsad
+ecsadsa
+DataCentername: {{ DataCenter_name }}
+DataCenterIP: {{ DataCenter_IP }}
+

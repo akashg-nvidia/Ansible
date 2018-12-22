@@ -1,0 +1,16 @@
+---
+ - name: testing invlude variable in loop
+   include_vars: "{{item}}.yml"
+   with_items: "{{ nodedc }}"
+   when: nodedc is defined
+   register: test_loop
+
+ - name: testloop value
+   debug: msg="test loop value is:{{ test_loop }}"
+
+ - name: updating template
+   template:
+     src: sample_config.prop
+     dest: /home/ubuntu/target/dev/{{ item['ansible_facts']['node_name'] }}_updatedprop.prop
+   with_items: "{{ test_loop.results }}"
+   when: test_loop.results  is defined

@@ -1,0 +1,9 @@
+---
+- name: test playbook
+  hosts: localhost
+  tasks:
+     - name: in test
+       debug: msg="my vr value are- {{ item }}"
+       with_items:
+          - node1
+          - node2
