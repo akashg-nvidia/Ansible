@@ -1,5 +1,6 @@
 ---
 # vars file for myrole1
+env: stage
 nodedc:
   - node5
   - node6

@@ -1,0 +1,37 @@
+---
+# - name: check if file exist or not
+#   stat: path="{{env}}/{{item}}"
+#   register: file_info
+#   with_items: 
+#      - node_dc1_map.yml
+#      - datacentera1.properties
+#
+#      - node_dc2_map.yml
+#      - datacentera2.properties
+ 
+# - name: show the fileout
+#  debug: var=file_info
+
+ - name: Include env specific for node map with dc1.
+   include_vars: "{{env}}/node_dc1_map.yml"
+
+ - name: Include DC1 specific variables.
+   include_vars: "{{env}}/datacentera1.properties"
+
+ - include_tasks: actual_task.yml
+
+# - name: display dev variable
+#   debug: msg="dev env variables are: {{item}}"
+#   with_items: "{{ nodedc1 }}"
+
+# - name: checking variable
+#   debug: msg="list value is {{item}}"
+#   with_items: "{{ nodedc1 }}"
+
+ - name: Include env specific variables for node map with dc2.
+   include_vars: "{{env}}/node_dc2_map.yml"
+
+ - name: Include DC2 specific variables.
+   include_vars: "{{env}}/datacentera2.properties"
+
+ - include_tasks: actual_task.yml

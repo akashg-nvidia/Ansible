@@ -1,4 +1,23 @@
 ---
- - include_tasks: dev.yml
- - include_tasks: stage.yml
- - include_tasks: prod.yml
+# - include_tasks: dev.yml
+# - include_tasks: stage.yml
+# - include_tasks: prod.yml
+ - name: "Delete target file"
+   file:
+    path: /home/ubuntu/target/
+    state: absent
+
+ - name:  call dev env playbook 
+   set_fact: env=dev
+ - include_tasks: set_var.yml
+   when: env is defined
+
+ - name: call stage env playbook
+   set_fact: env=stage
+ - include_tasks: set_var.yml
+   when: env is defined
+
+ - name:  call prod env playbook
+   set_fact: env=prod
+ - include_tasks: set_var.yml
+   when: env is defined

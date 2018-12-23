@@ -1,0 +1,17 @@
+---
+ - name: adding node property variable in custom variable
+   include_vars: "{{item}}.yml"
+   with_items: "{{ nodedc }}"
+   when: nodedc is defined
+   register: node_property_info
+
+ - name: testloop value
+   debug: msg="test loop value is {{env}}:{{ node_property_info }}"
+
+ - name: Ensures {{target_path}}/{{env}} dir exists
+   file: path={{target_path}}/{{env}}  state=directory
+
+ - name: updating template
+   template: src={{env}}/sample_config.prop dest={{target_path}}/{{env}}/{{ item['ansible_facts']['node_name'] }}_updatedprop.prop
+   with_items: "{{ node_property_info.results }}"
+   when: node_property_info.results  is defined

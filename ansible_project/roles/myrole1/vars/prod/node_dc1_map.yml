@@ -1,5 +1,6 @@
 ---
 # vars file for myrole1
+env: prod
 nodedc:
   - node1
   - node2

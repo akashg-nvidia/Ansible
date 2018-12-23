@@ -1,4 +1,5 @@
 ---
+target_path: /home/ubuntu/target
 # vars file for myrole1
 #nodedc1:
 #  - node1
